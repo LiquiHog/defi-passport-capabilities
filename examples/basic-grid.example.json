@@ -1,0 +1,36 @@
+{
+  "name": "Basic grid plan",
+  "purpose": "A worked ALGO/USDC grid allocation to adapt",
+  "note": "Illustrative planning amounts, not a deployment payload",
+  "pair": {
+    "base": "ALGO",
+    "quote": "USDC"
+  },
+  "range": {
+    "low": 0.14,
+    "high": 0.22,
+    "spacing": 0.01
+  },
+  "funding": {
+    "quote_inventory": 1000,
+    "base_inventory": 2000,
+    "comment": "Both sides need funding. A level that sold needs USDC to buy again; a level that bought needs ALGO to sell."
+  },
+  "buy_levels": [
+    { "price": 0.17, "size_quote": 100 },
+    { "price": 0.16, "size_quote": 200 },
+    { "price": 0.15, "size_quote": 300 },
+    { "price": 0.14, "size_quote": 400 }
+  ],
+  "worst_acceptable_price_pct": 0.5,
+  "profit_destination": "owner",
+  "running_costs": {
+    "asset": "ALGO",
+    "comment": "Held separately from trading inventory for fees and minimum balance"
+  },
+  "decide_before_funding": [
+    "Whether this range suits the pair's actual volatility",
+    "Whether the spacing clearly exceeds trading costs",
+    "How much of the treasury you would accept losing here"
+  ]
+}
